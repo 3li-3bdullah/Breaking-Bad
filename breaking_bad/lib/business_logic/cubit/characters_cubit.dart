@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:breaking_bad/data/model/characters.dart';
+import 'package:breaking_bad/data/model/character.dart';
 import 'package:breaking_bad/data/repository/characters_repo.dart';
 import 'package:meta/meta.dart';
 
@@ -9,9 +9,9 @@ class CharactersCubit extends Cubit<CharactersState> {
   CharactersCubit(this.charactersRepo) : super(CharactersInitial());
 
   final CharactersRepo charactersRepo;
-  late List<Characters> characters;
+  late List<Character> characters;
 
-  List<Characters> getCharactersData(){
+  List<Character> getAllCharacters(){
     charactersRepo.getAllCharactersData().then((characters) {
       emit(CharactersLoaded(characters));
       this.characters = characters;

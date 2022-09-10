@@ -1,4 +1,4 @@
-import 'package:breaking_bad/data/model/characters.dart';
+import 'package:breaking_bad/data/model/character.dart';
 import 'package:breaking_bad/data/web_services/charachters_web_services.dart';
 
 class CharactersRepo {
@@ -6,10 +6,10 @@ class CharactersRepo {
 
   final CharactersWebServices charactersWebServices;
 
-  Future<List<dynamic>> getCharactersData() async {
+  Future<List<Character>> getAllCharactersData() async {
     final characters = await charactersWebServices.getAllCharacters();
     return characters
-        .map((character) => Characters.fromJson(character))
+        .map((character) => Character.fromJson(character))
         .toList();
   }
 }

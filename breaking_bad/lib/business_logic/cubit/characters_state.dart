@@ -8,5 +8,5 @@ class CharactersInitial extends CharactersState {}
 class CharactersLoaded extends CharactersState {
   CharactersLoaded(this.charactersList);
 
-  final List<Characters> charactersList;
+  final List<Character> charactersList;
 }
