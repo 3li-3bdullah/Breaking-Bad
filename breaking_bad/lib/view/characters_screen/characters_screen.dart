@@ -49,11 +49,12 @@ class _CharactersScreenState extends State<CharactersScreen> {
                           mainAxisSpacing: 1,
                           childAspectRatio: 2 / 3,
                         ),
+                        itemCount: allCharacters.length,
                         shrinkWrap: true,
                         physics: const ClampingScrollPhysics(),
                         padding: EdgeInsets.zero,
                         itemBuilder: (context, index) {
-                          return CharacterItem();
+                          return CharacterItem(character: allCharacters[index],);
                         })
                   ],
                 ),
